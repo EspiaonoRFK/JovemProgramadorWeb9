@@ -1,0 +1,93 @@
+﻿@model List<Aluno>  
+
+@if (ViewData["MsgErro"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["MsgErro"]
+    </div>
+}
+
+@if (ViewData["MsgSucesso"] != null)
+{
+    <div class="alert-success">
+        @ViewData["MsgSucesso"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Cep</th>
+            <th scope="col">Ações</th> <!-- Adicionado uma coluna para ações -->
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (Aluno aluno in Model)
+            {
+                <tr>
+                    <td>@aluno.Nome</td>
+                    <td>@aluno.Idade</td>
+                    <td>@aluno.Matricula</td>
+                    <td>@aluno.Cep</td>
+                    <td>
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="@Url.Action("BuscarEndereco", "Aluno", new { cep = aluno.Cep })" class="btn btn-primary">Endereco</a>
+                            <a href="@Url.Action("Editar", "Aluno", new { id = aluno.Id })" class="btn btn-primary">Editar</a>
+                            <a href="@Url.Action("Excluir", "Aluno", new { id = aluno.Id })" class="btn btn-danger">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+        <tr>
+
+    <td>Gustavo</td>
+    <td>23</td>
+    <td>abc12345</td>
+    <td>88354-970</td>
+    <td>
+       
+<div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88350-665"> Endereco</a>
+                </div>
+            </td>
+            
+           
+        </tr>
+        <tr>
+          
+            <td>Mané</td>
+            <td>21</td>
+            <td>hal74317</td>
+            <td>88353-900</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88351-773"> Endereco</a>
+                </div>
+            </td>
+            
+        
+        </tr>
+        <tr>
+            
+            <td>Raul</td>
+            <td>22</td>
+            <td>RDX91420</td>
+            <td>88353-902</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Aluno" asp-action="BuscarEndereco" asp-route-cep="88351-400"> Endereco</a>
+                </div>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

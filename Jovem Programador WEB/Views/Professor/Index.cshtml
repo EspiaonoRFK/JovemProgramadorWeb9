@@ -1,0 +1,58 @@
+﻿@if (ViewData["MsgErro"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["MsgErro"]
+        </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">Professor</th>
+            <th scope="col">Matéria</th>
+            <th scope="col">Idade</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td>Julian Nigelsman</td>
+            <td>Gestão Financeira</td>
+            <td>37</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88350-665"> Endereco</a>
+                </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>Guardiola</td>
+            <td>SEO (Search Engine Optimization)</td>
+            <td>52</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88351-773"> Endereco</a>
+                </div>
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>Michele</td>
+            <td>Estilismo e Design de Moda</td>
+            <td>34</td>
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <a type="submit" class="btn btn-primary" role="button" asp-controller="Professor" asp-action="BuscarEndereco" asp-route-cep="88351-400"> Endereco</a>
+                </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>

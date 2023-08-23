@@ -1,0 +1,14 @@
+﻿@model Aluno 
+
+ <form asp-controller="Aluno" asp-action="InserirAluno" method="post">
+
+     <div class="mb-3">
+         <label for="name" class="form-label">Nome</label>
+         <input type="text" asp-for="Nome" class="form-control col-md-4">
+     </div>
+
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit">Adicionar</button>
+        
+    </div>
+</form>
